@@ -1,0 +1,112 @@
+
+
+
+
+<html>
+<head>
+    <title>采购订单 - Mini ERP</title>
+    <style>
+        table { border-collapse: collapse; width: 100%; margin: 0 auto; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        th { background-color: #f2f2f2; }
+        .btn { padding: 5px 10px; background-color: #007bff; color: white;
+               text-decoration: none; border-radius: 4px; }
+        .status-DRAFT { color: gray; font-weight: bold; }
+        .status-APPROVED { color: #007bff; font-weight: bold; }
+        .status-RECEIVING { color: orange; font-weight: bold; }
+        .status-COMPLETED { color: green; font-weight: bold; }
+        .status-CANCELLED { color: red; font-weight: bold; }
+        .btn-del { color: red; text-decoration: none; }
+        .btn-approve { color: #007bff; text-decoration: none; font-weight: bold; }
+        .btn-receive { color: #28a745; text-decoration: none; font-weight: bold; }
+        .action-bar { margin-bottom: 20px; text-align: center; }
+    </style>
+</head>
+<body>
+
+
+
+
+<style>
+    .erp-layout { display: flex; min-height: 100vh; }
+    .sidebar {
+        width: 220px; background: #2c3e50; color: #ecf0f1;
+        padding: 0; flex-shrink: 0;
+    }
+    .sidebar .logo { padding: 20px; text-align: center; font-size: 20px; font-weight: bold;
+        border-bottom: 1px solid #34495e; background: #1a252f; }
+    .sidebar .menu { list-style: none; padding: 0; margin: 0; }
+    .sidebar .menu li { border-bottom: 1px solid #34495e; }
+    .sidebar .menu li a {
+        display: block; padding: 14px 20px; color: #ecf0f1;
+        text-decoration: none; font-size: 15px; transition: background 0.2s;
+    }
+    .sidebar .menu li a:hover { background: #34495e; }
+    .sidebar .menu li a.active { background: #3498db; font-weight: bold; }
+    .main-content { flex: 1; padding: 0; background: #f5f6fa; }
+    .top-bar {
+        background: white; padding: 12px 30px; text-align: right;
+        font-size: 14px; border-bottom: 1px solid #ddd; box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .top-bar b { color: #2c3e50; }
+    .top-bar a { color: #e74c3c; text-decoration: none; margin-left: 10px; }
+    .content-area { padding: 30px; }
+</style>
+
+<div class="erp-layout">
+    <!-- 左侧动态菜单 -->
+    <div class="sidebar">
+        <div class="logo">🏭 Mini ERP</div>
+        <ul class="menu">
+            
+                <li>
+                    <a href="/erp/purchase_order"
+                       class="">
+                        🛒 采购管理
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <!-- 右侧内容区 -->
+    <div class="main-content">
+        <div class="top-bar">
+            欢迎您，<b>库管员小李</b> (角色: 仓管员)
+            <a href="/erp/logout">【退出登录】</a>
+        </div>
+        <div class="content-area">
+
+<h2 style="text-align: center">采购订单管理</h2>
+
+<div class="action-bar">
+    
+    
+    
+</div>
+
+<table>
+    <tr>
+        <th>订单编号</th>
+        <th>供应商</th>
+        <th>订单日期</th>
+        <th>总金额</th>
+        <th>状态</th>
+        <th>创建人</th>
+        <th>创建时间</th>
+        <th>入库时间</th>
+        <th>操作</th>
+    </tr>
+    
+    
+        <tr>
+            <td colspan="9" style="color: red;">暂无采购订单，请先添加！</td>
+        </tr>
+    
+</table>
+
+</div><!-- .content-area -->
+    </div><!-- .main-content -->
+</div><!-- .erp-layout -->
+</body>
+</html>

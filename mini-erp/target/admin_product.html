@@ -1,0 +1,168 @@
+
+
+
+<html>
+<head>
+    <title>商品管理 - Mini ERP</title>
+    <style>
+        table { border-collapse: collapse; width: 100%; margin: 0 auto; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        th { background-color: #f2f2f2; }
+        .btn { padding: 5px 10px; background-color: #007bff; color: white;
+               text-decoration: none; border-radius: 4px; margin: 0 5px; }
+        .btn-purchase { background-color: #28a745; }
+        .btn-edit { color: #007bff; text-decoration: none; }
+        .btn-del { color: red; text-decoration: none; }
+        .action-bar { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+
+
+
+<style>
+    .erp-layout { display: flex; min-height: 100vh; }
+    .sidebar {
+        width: 220px; background: #2c3e50; color: #ecf0f1;
+        padding: 0; flex-shrink: 0;
+    }
+    .sidebar .logo { padding: 20px; text-align: center; font-size: 20px; font-weight: bold;
+        border-bottom: 1px solid #34495e; background: #1a252f; }
+    .sidebar .menu { list-style: none; padding: 0; margin: 0; }
+    .sidebar .menu li { border-bottom: 1px solid #34495e; }
+    .sidebar .menu li a {
+        display: block; padding: 14px 20px; color: #ecf0f1;
+        text-decoration: none; font-size: 15px; transition: background 0.2s;
+    }
+    .sidebar .menu li a:hover { background: #34495e; }
+    .sidebar .menu li a.active { background: #3498db; font-weight: bold; }
+    .main-content { flex: 1; padding: 0; background: #f5f6fa; }
+    .top-bar {
+        background: white; padding: 12px 30px; text-align: right;
+        font-size: 14px; border-bottom: 1px solid #ddd; box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .top-bar b { color: #2c3e50; }
+    .top-bar a { color: #e74c3c; text-decoration: none; margin-left: 10px; }
+    .content-area { padding: 30px; }
+</style>
+
+<div class="erp-layout">
+    <!-- 左侧动态菜单 -->
+    <div class="sidebar">
+        <div class="logo">🏭 Mini ERP</div>
+        <ul class="menu">
+            
+                <li>
+                    <a href="/erp/product"
+                       class="">
+                        📦 商品管理
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/erp/purchase_order"
+                       class="">
+                        🛒 采购管理
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/erp/purchase_request"
+                       class="">
+                        📋 采购申请
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <!-- 右侧内容区 -->
+    <div class="main-content">
+        <div class="top-bar">
+            欢迎您，<b>超级管理员</b> (角色: 超级管理员)
+            <a href="/erp/logout">【退出登录】</a>
+        </div>
+        <div class="content-area">
+
+<h2 style="text-align: center">商品管理</h2>
+
+<div class="action-bar" style="text-align: center;">
+    <!-- RBAC按钮级权限控制：替代硬编码的 c:if roleCode == 'ADMIN' -->
+    
+        <a class="btn" href="/erp/add_product.jsp">新增商品</a>
+    
+
+    
+        <a class="btn btn-purchase" href="/erp/purchase_order">进入采购管理</a>
+    
+
+    
+        <a class="btn btn-purchase" href="/erp/purchase_request">采购申请</a>
+    
+</div>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>商品编码</th>
+        <th>商品名称</th>
+        <th>分类</th>
+        <th>单位</th>
+        <th>库存</th>
+        <th>销售价</th>
+        <!-- 按钮级权限：只有有编辑或删除权限的人才看到操作列 -->
+        
+            <th>操作</th>
+        
+        
+            <th>操作</th>
+        
+    </tr>
+    
+        <tr>
+            <td>4</td>
+            <td>001</td>
+            <td>苹果</td>
+            <td>好吃的</td>
+            <td>个</td>
+            <td>4</td>
+            <td>0.0</td>
+            <td>
+                
+                    <a class="btn-edit" href="/erp/product?action=edit&id=4">编辑</a>
+                
+                
+                    | <a class="btn-del" href="/erp/product?action=delete&id=4"
+                         onclick="return confirm('确定要删除这个商品吗？');">删除</a>
+                
+            </td>
+        </tr>
+    
+        <tr>
+            <td>13</td>
+            <td>003</td>
+            <td>桃子</td>
+            <td>好吃的</td>
+            <td>个</td>
+            <td>4</td>
+            <td>0.0</td>
+            <td>
+                
+                    <a class="btn-edit" href="/erp/product?action=edit&id=13">编辑</a>
+                
+                
+                    | <a class="btn-del" href="/erp/product?action=delete&id=13"
+                         onclick="return confirm('确定要删除这个商品吗？');">删除</a>
+                
+            </td>
+        </tr>
+    
+    
+</table>
+
+</div><!-- .content-area -->
+    </div><!-- .main-content -->
+</div><!-- .erp-layout -->
+</body>
+</html>

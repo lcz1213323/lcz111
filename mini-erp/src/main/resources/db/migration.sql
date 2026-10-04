@@ -1,0 +1,13 @@
+-- ============================================================
+-- 本脚本已废弃 —— 请改用 init.sql
+-- ============================================================
+-- 原因：旧版 migration.sql 使用了 MariaDB 专有语法
+--   （CREATE PROCEDURE IF NOT EXISTS / CREATE OR REPLACE PROCEDURE /
+--     ALTER TABLE ... ADD INDEX IF NOT EXISTS），在 MySQL 8.0 上无法执行。
+--
+-- 全部建表 / 增强列 / 索引 / 权限种子 / 存储过程 / 审计触发器 / 测试账号
+-- 已合并进 init.sql（幂等，可重复执行）。
+--
+-- 执行方式:
+--   mysql -u root -plczimxy233 --default-character-set=utf8mb4 mini_erp < init.sql
+-- ============================================================

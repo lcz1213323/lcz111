@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+        version="2.1">
+
+    <description>Mini ERP 自定义权限标签库</description>
+    <tlib-version>1.0</tlib-version>
+    <short-name>erp</short-name>
+    <uri>http://erp.com/tags</uri>
+
+    <tag>
+        <name>check</name>
+        <tag-class>com.erp.tag.HasPermissionTag</tag-class>
+        <body-content>JSP</body-content>
+        <description>
+            根据权限编码控制标签体内容是否输出。
+            code: 权限编码，如 product:add, purchase:approve 等。
+        </description>
+        <attribute>
+            <name>code</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>权限编码</description>
+        </attribute>
+    </tag>
+</taglib>
